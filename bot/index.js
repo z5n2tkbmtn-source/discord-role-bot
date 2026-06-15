@@ -273,8 +273,9 @@ client.on("interactionCreate", async (interaction) => {
 
   if (selectedRole) {
     await member.roles.add(selectedRole);
-  } }
-else if (interaction.customId === "plattform") {
+  } 
+  
+  if (interaction.customId === "plattform") {
 
   const selectedPlatforms = interaction.values;
 
@@ -313,6 +314,7 @@ else if (interaction.customId === "plattform") {
 
   return;
 
+ }
   await interaction.editReply({
   content: `✅ Rolle gesetzt: ${roleName}`
 });
