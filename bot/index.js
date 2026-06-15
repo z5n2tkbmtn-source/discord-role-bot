@@ -7,12 +7,15 @@ const {
   StringSelectMenuBuilder,
 } = require("discord.js");
 
+const CREATE_MENUS = false;
 const client = new Client({
   intents: [GatewayIntentBits.Guilds],
 });
 
 client.once("ready", async () => {
   console.log(`Bot online: ${client.user.tag}`);
+
+  if (!CREATE_MENUS) return;
 
   const channel = await client.channels.fetch(
     "1498273261912330320"
